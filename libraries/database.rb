@@ -75,6 +75,9 @@ module ::Openstack # rubocop:disable Documentation
         end
 
         return info
+      when 'nosql'
+        ::Chef::Log.warn("Unimplemented database type #{type}")
+        return info
       else
         ::Chef::Log.error("Unsupported database type #{type}")
       end
